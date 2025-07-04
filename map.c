@@ -1,6 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "map.h"
+
+void copymap(MAPA* destino, MAPA* origem){
+    destino->linhas = origem->linhas;
+    destino->colunas = origem->colunas;
+
+    dynamic_allocation(destino);
+    for(int i=0; i<origem->linhas; i++){
+        strcpy(destino->matrix[i], origem->matrix[i]);
+    }
+}
+
+int movemap(MAPA* m, int xorigem, int yorigem, int xdestino, int ydestino){
+    char character = m->matrix [xorigem] [yorigem];
+    m->matrix[xdestino] [ydestino] = character;
+    m->matrix [xorigem] [yorigem] = EMPTY;
+}
+
+int valid(MAPA* m, int x, int y){
+    if (x >= m->linhas)
+        return 0;
+    if (y >= m->colunas)
+        return 0;
+    return 1;
+}
+
+int isempty (MAPA* m, int x, int y){
+    return m->matrix[x][y] == EMPTY;
+}
 
 void dynamic_allocation(MAPA* m){
     //Alocando o mapa com memória e tamanho dinamicamente
