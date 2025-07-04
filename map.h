@@ -1,3 +1,9 @@
+#define HERO '@'
+#define GHOST '#'
+#define EMPTY '.'
+#define VERTICAL_WALL '|'
+#define HORIZONTAL_WALL '-'
+
 //Criando uma estrutura para manter o mapa, facilitando caso venha a expandir o código com mais mapas
 struct map{
     char** matrix; //Ponteiro de ponteiro
@@ -17,3 +23,7 @@ void seemap(MAPA* m);
 void freemap(MAPA* m);
 void printmap(MAPA* m);
 void findmap(MAPA* m, POSITION* p, char c);
+int valid(MAPA* m, int x, int y);
+int isempty (MAPA* m, int x, int y);
+int movemap(MAPA* m, int xorigem, int yorigem, int xdestino, int ydestino);
+void copymap(MAPA* destino, MAPA* origem);
