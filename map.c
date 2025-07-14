@@ -3,6 +3,22 @@
 #include <string.h>
 #include "map.h"
 
+int parede(MAPA* m, int x, int y){
+    return m->matrix[x][y] == VERTICAL_WALL ||
+        m->matrix[x][y] == HORIZONTAL_WALL;
+}
+
+int ehpersonagem(MAPA* m, char personagem, int x, int y){
+    return m->matrix[x][y] == personagem;
+}
+
+int podeandar(MAPA* m, char personagem, int x, int y){
+    return
+        valid(m, x, y) &&
+        !parede(m, x, y) &&
+        !ehpersonagem(m, personagem, x, y);
+}
+
 void copymap(MAPA* destino, MAPA* origem){
     destino->linhas = origem->linhas;
     destino->colunas = origem->colunas;
@@ -70,15 +86,16 @@ void printmap(MAPA* m){
     }    
 }
 
-void findmap(MAPA* m, POSITION* p, char c){
+int findmap(MAPA* m, POSITION* p, char c){
         //Acha a posição do usuário
     for(int i=0; i<m->linhas; i++){
         for (int j=0; j<m->colunas; j++){
             if(m->matrix[i][j] == c){
                 p-> x = i;
                 p-> y = j;
-                break;
+                return 1;
             }
         }
     }
+    return 0;
 }
