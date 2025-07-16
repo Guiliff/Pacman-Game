@@ -3,7 +3,7 @@
 Um protótipo funcional do clássico **Pac-Man**, desenvolvido em linguagem C e executado no terminal.  
 Este projeto tem como objetivo praticar **manipulação de arquivos**, **alocação dinâmica de memória**, **estruturas e modularização**, e **controle de personagem com entrada do usuário**.  
 
-> 💡 Projeto em desenvolvimento — novas funcionalidades podem ser adicionadas!
+> 💡 Projeto em desenvolvimento — novas funcionalidades podem ser adicionadas e/ou sugeridas!
 
 ---
 
@@ -48,7 +48,7 @@ Símbolos do jogo:
 
 
 <div align="center">
-  <img src="https://github.com/Guiliff/Pacman-Game/blob/main/assets/testpacman.gif?raw=true" alt="Testando o jogo" />
+  <img src="https://github.com/Guiliff/Pacman-Game/blob/main/assets/testpacman.gif?raw=true" alt="Compilando o jogo" />
 </div>
 
 ## 🛠 Requisitos
