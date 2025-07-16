@@ -1,9 +1,9 @@
-# 👾 Pacman (Protótipo) - ![Linguagem C](https://img.shields.io/badge/feito%20em-C-blue.svg)
+# 👾 Pacman - ![Linguagem C](https://img.shields.io/badge/feito%20em-C-blue.svg)
 
-Um protótipo do clássico **Pac-Man**, desenvolvido em linguagem C e executado no terminal.  
-Este projeto tem como objetivo praticar **manipulação de arquivos**, **alocação dinâmica de memória**, **estruturas**, e **controle de personagem com entrada do usuário**.  
+Um protótipo funcional do clássico **Pac-Man**, desenvolvido em linguagem C e executado no terminal.  
+Este projeto tem como objetivo praticar **manipulação de arquivos**, **alocação dinâmica de memória**, **estruturas e modularização**, e **controle de personagem com entrada do usuário**.  
 
-> 💡 Projeto em desenvolvimento — novas funcionalidades estão sendo implementadas!
+> 💡 Projeto em desenvolvimento — novas funcionalidades podem ser adicionadas!
 
 ---
 
@@ -17,7 +17,7 @@ cd Pacman-Game
 
 2. **Compile o código** com o GCC no terminal:
 ```bash
-gcc pacman_game.c map.c -o guessing_game.out
+gcc pacman_game.c map.c -o pacman_game.out
 ./pacman_game.out
 ```
 
@@ -36,9 +36,15 @@ Você controla o Pac-Man através do teclado, usando os seguintes comandos:
 - `A` → esquerda  
 - `S` → baixo  
 - `D` → direita
+- `B` → usar pílula (explosão nas 4 direções)
 
-📄 O mapa é carregado a partir do arquivo `map_1.txt`, que deve estar no mesmo diretório do executável.  
-👾 O símbolo `@` representa o Pac-Man no mapa.
+Símbolos do jogo:
+
+- `@` → Pacman (herói)
+- `#` → Fantasma
+- `+` → Pílula
+
+📄 O mapa é lido dinamicamente, então você pode personalizá-lo livremente no arquivo map_1.txt.
 
 
 <div align="center">
