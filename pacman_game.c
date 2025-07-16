@@ -103,7 +103,28 @@ void move(char direction){
 }
 
 void explodepilula(){
-    printf("explodiu");
+
+    if(!tempilula) return;
+
+    explodepilula2(hero.x, hero.y, 0, 1, 3);
+    explodepilula2(hero.x, hero.y, 0, -1, 3);
+    explodepilula2(hero.x, hero.y, 1, 0, 3);
+    explodepilula2(hero.x, hero.y, -1, 0, 3);
+
+    tempilula = 0;
+}
+
+void explodepilula2(int x, int y, int somax, int somay, int qtd){
+    if (qtd == 0) return;
+
+    int novox = x + somax;
+    int novoy = y + somay;
+
+    if(!valid(&m, novox, novoy)) return;
+    if(parede(&m, novox, novoy)) return;
+
+    m.matrix[novox][novoy] = EMPTY;
+    explodepilula2(novox, novoy, somax, somay, qtd -1);
 }
 
 int main(){
