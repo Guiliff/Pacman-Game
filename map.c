@@ -67,7 +67,7 @@ void seemap(MAPA* m){
 
     dynamic_allocation(m);
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i< m->linhas; i++){
         fscanf(f, "%s", m->matrix[i]);
     }
     fclose(f);
@@ -81,7 +81,7 @@ void freemap(MAPA* m){
 }
 
 void printmap(MAPA* m){
-    for (int i = 0; i<5; i++){
+    for (int i = 0; i< m->linhas; i++){
         printf("%s\n", m->matrix[i]);
     }    
 }
